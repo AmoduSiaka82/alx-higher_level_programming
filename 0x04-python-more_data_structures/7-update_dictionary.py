@@ -2,7 +2,9 @@
 def update_dictionary(a_dictionary, key, value):
     for k, v in a_dictionary.items():
         if k == key:
-            a_dictionary[k] = value
+            d = {k: value}
+            a_dictionary.update(d)
         else:
-            a_dictionary[key] = value
+            d = {key: value}
+            a_dictionary.update(d)
     return (a_dictionary)
