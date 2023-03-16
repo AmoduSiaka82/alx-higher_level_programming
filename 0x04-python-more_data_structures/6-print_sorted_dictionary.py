@@ -1,3 +1,3 @@
 def print_sorted_dictionary(a_dictionary):
     for k, v in a_dictionary.items():
-        print(sorted(k))
+        print(sorted(k, v))
