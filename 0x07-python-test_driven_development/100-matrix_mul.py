@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 
-Module composed by a function that multiplies 2 matrices
+It is composed by a function that multiplies 2 matrices
 
 """
 
@@ -10,11 +10,11 @@ def matrix_mul(m_a, m_b):
     """ Function that multiplies 2 matrices
 
     Args:
-        m_a: matrix a
-        m_b: matrix b
+        m_a: a
+        m_b: b
 
     Returns:
-        result of the multiplication
+        result
 
     Raises:
         TypeError: if m_a or m_b aren't a list
@@ -48,28 +48,28 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_b can't be empty")
 
     for lists in m_a:
-        for elems in lists:
-            if not type(elems) in (int, float):
+        for element in lists:
+            if not type(element) in (int, float):
                 raise TypeError("m_a should contain only integers or floats")
 
     for lists in m_b:
-        for elems in lists:
-            if not type(elems) in (int, float):
+        for element in lists:
+            if not type(element) in (int, float):
                 raise TypeError("m_b should contain only integers or floats")
 
     length = 0
 
-    for elems in m_a:
-        if length != 0 and length != len(elems):
+    for elem in m_a:
+        if length != 0 and length != len(elem):
             raise TypeError("each row of m_a must be of the same size")
-        length = len(elems)
+        length = len(elem)
 
     length = 0
 
-    for elems in m_b:
-        if length != 0 and length != len(elems):
+    for elem in m_b:
+        if length != 0 and length != len(elem):
             raise TypeError("each row of m_b must be of the same size")
-        length = len(elems)
+        length = len(elem)
 
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
@@ -80,14 +80,14 @@ def matrix_mul(m_a, m_b):
     for a in m_a:
         r2 = []
         i2 = 0
-        num = 0
+        nu = 0
         while (i2 < len(m_b[0])):
-            num += a[i1] * m_b[i1][i2]
+            nu += a[i1] * m_b[i1][i2]
             if i1 == len(m_b) - 1:
                 i1 = 0
                 i2 += 1
-                r2.append(num)
-                num = 0
+                r2.append(nu)
+                nu = 0
             else:
                 i1 += 1
         r1.append(r2)
